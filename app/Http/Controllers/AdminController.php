@@ -20,8 +20,8 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         // $perPage = $request->input('per_page', 5); // Nilai default 5 jika tidak ada query parameter
-        $search = $request->get('search');
-        // $search = $request->input('search');
+        // $search = $request->get('search');
+        $search = $request->input('search');
         $data = Admin::orderBy('id')
             ->where('id', $search)
             ->orWhere('nama', 'like', '%' . $search . '%')
